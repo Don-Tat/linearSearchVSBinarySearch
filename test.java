@@ -20,21 +20,28 @@ public class test {
         //sort both arrays
         Arrays.sort(array);
         Arrays.sort(search);
+
+        int linearSum = 0;
+        int binarySum = 0;
         // create a stopwatch object for linear search
-        Stopwatch stopwatchLinear = new Stopwatch();
-        //search for each element in the search array in the array using linear search
+        Stopwatch timerLinear = new Stopwatch();
+        //search for each element in the search array in the array using linear search and print the amount of times each element is found
         for (int i = 0; i < m; i++) {
-            int index = linearSearch.linearSearch(array, search[i]);
+            int count = linearSearch.linearSearch(array, search[i]);
+            linearSum += count;
         }
-        double timeLinear = stopwatchLinear.elapsedTime();
-        System.out.println("Linear search time: " + timeLinear + " seconds");
+        //print the time it took to search for all elements in the search array in the array using linear search and the sum of the amount of times each element is found
+        System.out.println("Time to search for all elements in the search array in the array using linear search: " + timerLinear.elapsedTime() + " seconds." + linearSum + " elements found.");
         // create a stopwatch object for binary search
-        Stopwatch stopwatchBinary = new Stopwatch();
-        //search for each element in the search array in the array using binary search
+        Stopwatch timerBinary = new Stopwatch();
+        //search for each element in the search array in the array using binary search and print the amount of times each element is found
         for (int i = 0; i < m; i++) {
-            int index = binarySearch.binarySearch(array, search[i]);
+            int count = binarySearch.binarySearch(array, search[i]);
+            binarySum += count;
         }
-        double timeBinary = stopwatchBinary.elapsedTime();
-        System.out.println("Binary search time: " + timeBinary + " seconds");
+        //add up all the times each element is found
+
+        //print the time it took to search for all elements in the search array in the array using binary search and the sum of the amount of times each element is found
+        System.out.println("Time to search for all elements in the search array in the array using binary search: " + timerBinary.elapsedTime() + " seconds." + binarySum + " elements found.");
     }
 }
