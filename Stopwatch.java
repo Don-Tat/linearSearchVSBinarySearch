@@ -23,7 +23,7 @@
  */
 
 
-public class Stopwatch { 
+public class Stopwatch {
 
     private final long start;
 
@@ -32,7 +32,7 @@ public class Stopwatch {
      */
     public Stopwatch() {
         start = System.currentTimeMillis();
-    } 
+    }
 
 
     /**
@@ -45,10 +45,10 @@ public class Stopwatch {
         return (now - start) / 1000.0;
     }
 
-    
+
     /**
      * Unit tests the {@code Stopwatch} data type.
-     * Takes a command-line argument {@code n} and computes the 
+     * Takes a command-line argument {@code n} and computes the
      * sum of the square roots of the first {@code n} positive integers,
      * first using {@code Math.sqrt()}, then using {@code Math.pow()}.
      * It prints to standard output the sum and the amount of time to
@@ -67,7 +67,7 @@ public class Stopwatch {
             sum1 += Math.sqrt(i);
         }
         double time1 = timer1.elapsedTime();
-        StdOut.printf("%e (%.2f seconds)\n", sum1, time1);
+        System.out.printf("%e (%.2f seconds)\n", sum1, time1);
 
         // sum of square roots of integers from 1 to n using Math.pow(x, 0.5).
         Stopwatch timer2 = new Stopwatch();
@@ -76,6 +76,6 @@ public class Stopwatch {
             sum2 += Math.pow(i, 0.5);
         }
         double time2 = timer2.elapsedTime();
-        StdOut.printf("%e (%.2f seconds)\n", sum2, time2);
+        System.out.printf("%e (%.2f seconds)\n", sum2, time2);
     }
-} 
+}
